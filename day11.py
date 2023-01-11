@@ -31,7 +31,7 @@ class Puzzle11(Puzzle):
     def __init__(self):
         super().__init__(11)
 
-    def parsed_input(self):
+    def parse_input(self):
         monkeys = []
         worries_str = "  Starting items: "
         operation_str = "  Operation: new = "
@@ -59,7 +59,7 @@ class Puzzle11(Puzzle):
         return monkeys
 
     def run_part1(self, niter=20):
-        monkeys = self.parsed_input()
+        monkeys = self.parsed_input
         for i in range(niter):
             for monkey in monkeys:
                 while len(monkey.worries) > 0:
@@ -70,7 +70,7 @@ class Puzzle11(Puzzle):
         return counts[0] * counts[1]
 
     def run_part2(self, niter=1000):
-        monkeys = self.parsed_input()
+        monkeys = self.parsed_input
         relief = math.prod([m.test for m in monkeys])
         for i in range(niter):
             for monkey in monkeys:

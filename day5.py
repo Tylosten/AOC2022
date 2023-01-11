@@ -7,8 +7,7 @@ class Puzzle4(Puzzle):
     def __init__(self):
         super().__init__(5)
 
-    @property
-    def parsed_input(self):
+    def parse_input(self):
         cols = {}
         moves = []
         for row in self.input:

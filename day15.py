@@ -12,7 +12,7 @@ class Puzzle15(Puzzle):
     def __init__(self):
         super().__init__(15)
 
-    def parsed_input(self):
+    def parse_input(self):
         sensors = []
         for row in self.input:
             sx, sy, bx, by = re.match(
@@ -76,11 +76,11 @@ class Puzzle15(Puzzle):
         print(grid)
 
     def run_part1(self):
-        limits = self.row_limits(self.parsed_input(), 10, True)
+        limits = self.row_limits(self.parsed_input, 10, True)
         return sum([lim[1] - lim[0] for lim in limits])
 
     def run_part2(self):
-        sensors = self.parsed_input()
+        sensors = self.parsed_input
         for l in range(MINLIM, LIM + 1):
             lims = self.row_limits(sensors, l)
             if len(lims) == 2:

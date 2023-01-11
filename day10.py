@@ -6,8 +6,7 @@ class Puzzle10(Puzzle):
     def __init__(self):
         super().__init__(10)
 
-    @property
-    def parsed_input(self):
+    def parse_input(self):
         cycle = 0
         x = 1
         res = []
@@ -25,7 +24,7 @@ class Puzzle10(Puzzle):
 
     def run_part1(self):
         sum = 0
-        for index in range(19, len(self.parsed_input), 40):
+        for index in range(19, len(self.parse_input), 40):
             print(index, self.parsed_input[index])
             sum += self.parsed_input[index].x * self.parsed_input[index].cycle
         return sum

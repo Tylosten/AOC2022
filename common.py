@@ -9,6 +9,7 @@ class Puzzle:
         self.input_file = Path(__file__).parent / "inputs" / f"day_{self.day}.txt"
         self.input_url = f"https://adventofcode.com/2022/day/{self.day}/input"
         self.input = self.get_input()
+        self.parsed_input = self.parse_input()
 
     def get_session(self):
         with open(self.session_file, "r") as f:
@@ -29,8 +30,7 @@ class Puzzle:
         with open(self.input_file, "r") as f:
             return f.readlines()
 
-    @property
-    def parsed_input(self):
+    def parse_input(self):
         return self.input
 
     def run_part1(self):

@@ -9,8 +9,7 @@ class Puzzle4(Puzzle):
     def __init__(self):
         super().__init__(4)
 
-    @property
-    def parsed_input(self):
+    def parse_input(self):
         res = []
         for row in self.input:
             pair = row.split(",")
@@ -22,7 +21,7 @@ class Puzzle4(Puzzle):
 
     def run_part1(self):
         count = 0
-        for pair in self.parsed_input:
+        for pair in self.parse_input:
             if (
                 pair["elf1"][0] <= pair["elf2"][0]
                 and pair["elf1"][1] >= pair["elf2"][1]
@@ -37,7 +36,7 @@ class Puzzle4(Puzzle):
 
     def run_part2(self):
         count = 0
-        for pair in self.parsed_input:
+        for pair in self.parse_input:
             if (
                 is_between(pair["elf1"][0], pair["elf2"][0], pair["elf2"][1])
                 or is_between(pair["elf1"][1], pair["elf2"][0], pair["elf2"][1])

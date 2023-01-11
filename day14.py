@@ -9,7 +9,7 @@ class Puzzle14(Puzzle):
         super().__init__(14)
         self.init_x = 500
 
-    def parsed_input(self):
+    def parse_input(self):
         rocks = []
         maxy = 0
         for row in self.input:
@@ -72,7 +72,7 @@ class Puzzle14(Puzzle):
         map.to_csv("14map.csv", sep=" ")
 
     def run_part1(self):
-        map = self.parsed_input()
+        map = self.parsed_input
         count = 0
         map.loc[0, 500] = "+"
         while True:
@@ -85,7 +85,7 @@ class Puzzle14(Puzzle):
         return count
 
     def run_part2(self):
-        grid = self.parsed_input()
+        grid = self.parsed_input
         max_ind = max(grid.index)
         grid.loc[max_ind + 1] = "."
         grid.loc[max_ind + 2] = "#"

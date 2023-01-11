@@ -23,7 +23,7 @@ class Puzzle2(Puzzle):
     def __init__(self):
         super().__init__(2)
 
-    def parsed_input(self):
+    def parse_input(self):
         games = []
         for game in self.input:
             if game != "":
@@ -53,7 +53,7 @@ class Puzzle2(Puzzle):
 
     def run_part2(self):
         score = 0
-        for g in self.parsed_input():
+        for g in self.parsed_input:
             score += self.score2(g[0], g[1])
         return score
 

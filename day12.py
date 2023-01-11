@@ -11,7 +11,7 @@ class Puzzle12(Puzzle):
         self.end = None
         self.starts = []
 
-    def parsed_input(self):
+    def parse_input(self):
         res = []
         for i, row in enumerate(self.input):
             startindex = row.find("S")
@@ -28,7 +28,7 @@ class Puzzle12(Puzzle):
         return res
 
     def run_part1(self):
-        elevations = self.parsed_input()
+        elevations = self.parsed_input
         print(f"Going from {self.start} to {self.end}")
         dist = pd.DataFrame(
             -1, columns=range(elevations.shape[1]), index=range(elevations.shape[0])
@@ -61,7 +61,7 @@ class Puzzle12(Puzzle):
         return dist
 
     def run_part2(self):
-        elevations = self.parsed_input()
+        elevations = self.parsed_input
         print(elevations.shape)
         dist = pd.DataFrame(
             -1, columns=range(elevations.shape[1]), index=range(elevations.shape[0])

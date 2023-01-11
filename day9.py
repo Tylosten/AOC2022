@@ -61,8 +61,7 @@ class Puzzle9(Puzzle):
             move = Point(1, 0)
         return move
 
-    @property
-    def parsed_input(self):
+    def parse_input(self):
         res = [row.split(" ") for row in self.input]
         res = [{"move": self.get_dir_move(row[0]), "nb": int(row[1])} for row in res]
 

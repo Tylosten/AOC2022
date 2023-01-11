@@ -49,7 +49,7 @@ class Puzzle13(Puzzle):
     def __init__(self):
         super().__init__(13)
 
-    def parsed_input(self):
+    def parse_input(self):
         pairs = []
         for i in range(0, len(self.input), 3):
             pairs.append(
@@ -62,13 +62,13 @@ class Puzzle13(Puzzle):
 
     def run_part1(self):
         s = 0
-        for i, pair in enumerate(self.parsed_input()):
+        for i, pair in enumerate(self.parsed_input):
             if pair[0] < pair[1]:
                 s += i + 1
         return s
 
     def run_part2(self):
-        pairs = self.parsed_input()
+        pairs = self.parsed_input
         packets = [pair[0] for pair in pairs] + [pair[1] for pair in pairs]
         divider1 = Packet([[2]])
         divider2 = Packet([[6]])

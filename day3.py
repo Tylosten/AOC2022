@@ -5,7 +5,7 @@ class Puzzle3(Puzzle):
     def __init__(self):
         super().__init__(3)
 
-    def parsed_input(self):
+    def parse_input(self):
         return self.input
 
     def find_item(self, rucksack):
