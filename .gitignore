@@ -1,3 +1,4 @@
 inputs/
 .venv
 __pycache__/
+images/
