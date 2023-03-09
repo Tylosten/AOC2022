@@ -18,20 +18,20 @@ class Point:
     def __add__(self, __o: object) -> object:
         if isinstance(__o, Point):
             return Point(self.x + __o.x, self.y + __o.y)
-        if isinstance(__o, list):
+        if isinstance(__o, list) or isinstance(__o, tuple):
             return Point(self.x + __o[0], self.y + __o[1])
         if isinstance(__o, int):
             return Point(self.x + __o, self.y + __o)
-        return None
+        raise TypeError(f"Cannot add {type(__o)} to Point")
 
     def __sub__(self, __o: object) -> object:
         if isinstance(__o, Point):
             return Point(self.x - __o.x, self.y - __o.y)
-        if isinstance(__o, list):
+        if isinstance(__o, list) or isinstance(__o, tuple):
             return Point(self.x - __o[0], self.y - __o[1])
         if isinstance(__o, int):
             return Point(self.x - __o, self.y - __o)
-        return None
+        raise TypeError(f"Cannot substract {type(__o)} to Point")
 
     def __str__(self) -> str:
         return f"({self.x},{self.y})"
@@ -108,4 +108,5 @@ class Puzzle9(Puzzle):
         return len(visited)
 
 
-print(Puzzle9().run_part2())
+if __name__ == "__main__":
+    Puzzle9().run()

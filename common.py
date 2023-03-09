@@ -38,7 +38,7 @@ class Puzzle:
             with open(self.input_file, "w") as f:
                 f.write(inpt)
         with open(self.input_file, "r") as f:
-            return f.readlines()
+            return [line.strip("\n ") for line in f.readlines()]
 
     def parse_input(self):
         return self.input
