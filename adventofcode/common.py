@@ -3,15 +3,13 @@ import requests
 
 
 class Puzzle:
-    def __init__(self, day):
+    def __init__(self, day, year):
         self.day = day
-        self.session_file = (
-            Path(__file__).parent / "inputs" / "session.txt"
-        )  # the path to the session.txt file
-        self.input_file = (
-            Path(__file__).parent / "inputs" / f"day_{self.day}.txt"
-        )  # the path to the input file
-        self.input_url = f"https://adventofcode.com/2022/day/{self.day}/input"  # the url to get the input from
+        self.year = year
+        base_dir =  Path(__file__).parent / "inputs"
+        self.session_file = base_dir  / "session.txt" # the path to the session.txt file
+        self.input_file = base_dir / f"{self.year}" / f"day_{self.day}.txt" # the path to the input file
+        self.input_url = f"https://adventofcode.com/{self.year}/day/{self.day}/input"  # the url to get the input from
         self.input = self.get_input()  # the input
         self.parsed_input = self.parse_input()  # the parsed input
 
