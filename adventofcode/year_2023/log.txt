@@ -1,0 +1,3 @@
+Puzzle day 17
+101
+{'score': inf}
